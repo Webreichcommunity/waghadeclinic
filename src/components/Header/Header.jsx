@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HashLink } from 'react-router-hash-link';
 import { Menu, X, ChevronDown, Search, Phone, Clock, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const menuItems = [
   {
@@ -94,7 +95,7 @@ export default function Header() {
             <HashLink smooth to="#home" className="flex items-center space-x-2">
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-[#2E5077]">Waghade Skin Clinic</span>
-                <span className="text-sm text-[#4DA1A9] font-medium">Your Skin, Our Care</span>
+                <span className="text-sm text-[#4DA1A9] font-bold">Your Skin, Our Care</span>
               </div>
             </HashLink>
 
@@ -136,13 +137,13 @@ export default function Header() {
               <button className="text-[#2E5077] hover:text-[#79D7BE] transition-colors p-2 rounded-full hover:bg-gray-100">
                 <Search className="w-5 h-5" />
               </button>
-              <HashLink
+              <Link
                 smooth
-                to="#contact"
+                to="/bookappointment"
                 className="px-6 py-3 bg-[#2E5077] text-white font-medium rounded-lg hover:bg-[#4DA1A9] transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5"
               >
                 Book Appointment
-              </HashLink>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -227,14 +228,14 @@ export default function Header() {
             </div>
 
             <div className="border-t p-4">
-              <HashLink
+              <Link
                 smooth
-                to="#contact"
+                to="/bookappointment"
                 className="block w-full px-5 py-3 text-center font-medium text-white bg-[#2E5077] rounded-lg hover:bg-[#4DA1A9] transition-all duration-300"
                 onClick={toggleMenu}
               >
                 Book Appointment
-              </HashLink>
+              </Link>
             </div>
           </div>
         </div>

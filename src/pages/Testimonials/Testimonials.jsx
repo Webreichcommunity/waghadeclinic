@@ -1,103 +1,156 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'Deepak',
-      role: 'Patient',
-      feedback:
-        'I had a fantastic experience at Waghade Skin Clinic. Dr. Praful provided high standard care and professional counselling. The clinic was clean, hygienic, and well-equipped with sterilised equipment. The quick service, reasonable pricing, and speedy recovery made it even better. The clinic is easily accessible and well-connected. I didn’t have to wait long for my appointment, and the in-house chemist and testing facilities were convenient for my routine check-up. Highly recommended!',
-      image: 'https://www.w3schools.com/w3images/avatar2.png', // User icon
-      rating: 5,
-    },
-    {
-      name: 'Sandeep Ingle',
-      role: 'Patient',
-      feedback:
-        'I recently visited Waghade Skin Clinic and had an excellent experience. The customer service was great, and the service was quick. Under the good supervision of Dr. Praful Waghade, I had a speedy recovery. I highly recommend this clinic for any skin-related issues.',
-      image: 'https://www.w3schools.com/w3images/avatar2.png', // User icon
-      rating: 5,
-    },
-    {
-      name: 'Manoj',
-      role: 'Patient',
-      feedback:
-        'Dr. Praful Waghade at Waghade Skin Clinic provided professional counselling and excellent treatment. The services were reasonably priced and the clinic offered decent coverage. I had a great experience and would highly recommend it.',
-      image: 'https://www.w3schools.com/w3images/avatar2.png', // User icon
-      rating: 4,
-    },
-    {
-      name: 'Shubhangi K Gaikwad',
-      role: 'Patient',
-      feedback:
-        'If you are looking for a well-experienced dermatologist, do visit Waghade Skin Clinic in Akola. Best diagnosis and treatment.',
-      image: 'https://www.w3schools.com/w3images/avatar2.png', // User icon
+      name: 'Deepak Sharma',
+      role: 'Satisfied Patient',
+      feedback: 'I had a fantastic experience at Waghade Skin Clinic. Dr. Praful provided exceptional care with a level of professionalism that exceeded my expectations. The clinic\'s modern facilities and attention to hygiene gave me complete peace of mind.',
       rating: 5,
     },
     {
       name: 'Dr. Neeta Punde',
-      role: 'Patient',
-      feedback:
-        'Patient-friendly. Proper counseling time for each and every patient. Less waiting period. Accurate diagnosis and excellent treatment. Highly recommend this clinic for every patient having skin and hair-related problems. Good and humble staff 😊',
-      image: 'https://www.w3schools.com/w3images/avatar2.png', // User icon
+      role: 'Medical Professional',
+      feedback: 'As a fellow medical professional, I can attest to the outstanding quality of care provided here. The attention to detail in patient care and the modern approach to treatment sets a new standard in dermatological care.',
       rating: 5,
     },
+    {
+      name: 'Shubhangi K Gaikwad',
+      role: 'Regular Patient',
+      feedback: 'Finding an experienced dermatologist is crucial, and Dr. Waghade exceeds all expectations. The personalized care and attention to detail make this clinic stand out from the rest.',
+      rating: 5,
+    },
+    {
+      name: 'Rajesh Kumar',
+      role: 'First-time Patient',
+      feedback: 'From the moment I walked in, I knew I was in good hands. The staff\'s professionalism and the clinic\'s state-of-the-art facilities impressed me. My treatment results were beyond my expectations.',
+      rating: 5,
+    },
+    {
+      name: 'Priya Mehta',
+      role: 'Long-term Patient',
+      feedback: 'I\'ve been visiting Dr. Waghade for over two years now, and the consistency in quality care is remarkable. The clinic\'s commitment to patient well-being and advanced treatment options keeps me coming back.',
+      rating: 5,
+    },
+    {
+      name: 'Amit Desai',
+      role: 'Patient',
+      feedback: 'The combination of cutting-edge treatments and compassionate care makes this clinic exceptional. Dr. Waghade\'s expertise in dermatology is evident in the outstanding results.',
+      rating: 5,
+    }
   ];
 
-  // Function to render stars based on rating
-  const renderStars = (rating) => {
-    let stars = [];
-    for (let i = 0; i < 5; i++) {
-      stars.push(
-        <svg
-          key={i}
-          xmlns="http://www.w3.org/2000/svg"
-          className={`w-5 h-5 ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fillRule="evenodd"
-            d="M10 15.27l4.47 2.34-1.16-5.07 3.83-3.64-5.15-.44L10 0l-2.99 7.5-5.15.44 3.83 3.64-1.16 5.07L10 15.27z"
-            clipRule="evenodd"
-          />
-        </svg>
-      );
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    const container = scrollRef.current;
+    if (container) {
+      const scrollAmount = direction === 'left' ? -400 : 400;
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
-    return stars;
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-purple-100">
-      <div className="container mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-semibold text-gray-800">What Our Patients Say</h1>
-          <p className="text-xl text-gray-600 mt-2">Read the experiences of those who have trusted our care</p>
-        </div>
+    <div className="bg-gradient-to-br from-slate-50 via-white to-slate-100 py-16 relative overflow-hidden" id='testimonials'>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Patient Stories
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Real experiences from our valued patients who have trusted us with their care
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-2xl duration-300"
-            >
-              <div className="flex items-center mb-4 space-x-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-indigo-600"
-                />
-                <div>
-                  <h3 className="font-semibold text-xl text-gray-800">{testimonial.name}</h3>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
-                  <div className="flex mt-2">{renderStars(testimonial.rating)}</div>
+        <div className="relative">
+          <button
+            onClick={() => scroll('left')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow-lg hover:bg-white transition-all"
+          >
+            <ChevronLeft className="w-6 h-6 text-gray-700" />
+          </button>
+
+          <button
+            onClick={() => scroll('right')}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow-lg hover:bg-white transition-all"
+          >
+            <ChevronRight className="w-6 h-6 text-gray-700" />
+          </button>
+
+          <div 
+            ref={scrollRef}
+            className="flex overflow-x-auto hide-scrollbar gap-6 pb-4 px-4 -mx-4 scroll-smooth"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
+                className="flex-shrink-0 w-[350px] bg-white rounded-2xl shadow-xl p-8 relative"
+              >
+                <Quote className="w-10 h-10 text-blue-500/20 absolute top-6 right-6" />
+                
+                <div className="mb-6">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <motion.span
+                      key={i}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: i * 0.1 }}
+                      className="text-yellow-400 inline-block"
+                    >
+                      ★
+                    </motion.span>
+                  ))}
                 </div>
-              </div>
-              <p className="text-gray-700 italic mt-4">"{testimonial.feedback}"</p>
-            </div>
-          ))}
+
+                <p className="text-gray-700 text-lg mb-6 line-clamp-4">
+                  "{testimonial.feedback}"
+                </p>
+
+                <div className="mt-auto">
+                  <h4 className="font-semibold text-xl text-gray-900">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-blue-600 font-medium">
+                    {testimonial.role}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
 };

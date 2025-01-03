@@ -15,6 +15,9 @@ import {
   ArrowRight
 } from "lucide-react";
 import ServicesPage from "../Services/Services";
+import Testimonials from "../Testimonials/Testimonials";
+import ContactPage from "../Contact/Contact";
+import DoctorPage from "../Doctors/Doctors";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -103,7 +106,7 @@ const QuizPreview = () => {
         className="mt-6"
       >
         <Link
-          to="/skin-quiz"
+          to="/skinquiz"
           className="block w-full text-center px-6 py-3 bg-gradient-to-r from-[#2E5077] to-[#4DA1A9] text-white rounded-lg font-medium hover:shadow-lg transition-all duration-300"
         >
           Take the Full Skin Quiz
@@ -168,7 +171,7 @@ export default function Home() {
               <motion.div variants={fadeInUp} className="flex gap-4">
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Link
-                    to="/appointment"
+                    to="/bookappointment"
                     className="inline-flex items-center px-6 py-3 bg-[#2E5077] text-white font-medium rounded-lg hover:bg-[#4DA1A9] transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
                     Book Consultation
@@ -177,7 +180,7 @@ export default function Home() {
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Link
-                    to="/skin-quiz"
+                    to="/skinquiz"
                     className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-md text-white font-medium rounded-lg hover:bg-white/20 transition-all duration-300"
                   >
                     Take Skin Quiz
@@ -337,7 +340,7 @@ export default function Home() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Link
-                    to="/skin-quiz"
+                    to="/skinquiz"
                     className="inline-flex items-center px-8 py-4 bg-white text-[#2E5077] font-medium rounded-xl hover:bg-[#79D7BE] hover:text-white transition-all duration-300 shadow-lg"
                   >
                     Start Free Skin Assessment
@@ -354,6 +357,9 @@ export default function Home() {
       </motion.section>
 
       <ServicesPage />
+      <Testimonials />
+      <DoctorPage />
+      <ContactPage />
     </div>
   );
 }
