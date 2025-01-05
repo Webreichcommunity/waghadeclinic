@@ -18,6 +18,7 @@ import ServicesPage from "../Services/Services";
 import Testimonials from "../Testimonials/Testimonials";
 import ContactPage from "../Contact/Contact";
 import DoctorPage from "../Doctors/Doctors";
+import { Helmet } from "react-helmet-async";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -99,8 +100,8 @@ const QuizPreview = () => {
           </motion.div>
         ))}
       </div>
-      
-      <motion.div 
+
+      <motion.div
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         className="mt-6"
@@ -122,6 +123,7 @@ export default function Home() {
   const [quizRef, quizInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
+    <>
     <div className="w-full bg-[#F6F4F0]">
       {/* Hero Section */}
       <motion.section
@@ -138,7 +140,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="absolute inset-0 bg-[url('/api/placeholder/1920/1080')] bg-cover bg-center"
         />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -158,16 +160,16 @@ export default function Home() {
                 Transform Your Skin Journey
                 <span className="text-[#79D7BE]"> Today</span>
               </motion.h1>
-              
+
               <motion.p
                 variants={fadeInUp}
                 className="text-lg md:text-xl opacity-90 leading-relaxed"
               >
-                Experience personalized dermatology care with cutting-edge treatments 
-                tailored to your unique skin needs. Start with our interactive skin 
+                Experience personalized dermatology care with cutting-edge treatments
+                tailored to your unique skin needs. Start with our interactive skin
                 assessment quiz.
               </motion.p>
-              
+
               <motion.div variants={fadeInUp} className="flex gap-4">
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Link
@@ -245,7 +247,7 @@ export default function Home() {
               >
                 Why Choose Us
               </motion.span>
-              <motion.h2 
+              <motion.h2
                 variants={fadeInUp}
                 className="text-4xl md:text-5xl font-bold text-[#2E5077] mb-6"
               >
@@ -255,7 +257,7 @@ export default function Home() {
                 variants={fadeInUp}
                 className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto"
               >
-                With state-of-the-art technology and a patient-first approach, 
+                With state-of-the-art technology and a patient-first approach,
                 we deliver exceptional dermatological care that transforms lives.
               </motion.p>
             </motion.div>
@@ -328,8 +330,8 @@ export default function Home() {
                   Discover Your Perfect Skin Care Routine
                 </h2>
                 <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-                  Take our comprehensive skin assessment quiz and receive a personalized 
-                  treatment plan worth ₹2,000 - completely free! Join thousands who've 
+                  Take our comprehensive skin assessment quiz and receive a personalized
+                  treatment plan worth ₹2,000 - completely free! Join thousands who've
                   transformed their skin health journey with us.
                 </p>
               </motion.div>
@@ -361,5 +363,6 @@ export default function Home() {
       <DoctorPage />
       <ContactPage />
     </div>
+    </>
   );
 }

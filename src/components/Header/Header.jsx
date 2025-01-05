@@ -72,16 +72,16 @@ export default function Header() {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+91 123 456 7890</span>
+                <span>+91 9054628440</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="w-4 h-4" />
-                <span>Mon - Sat: 9:00 AM - 8:00 PM</span>
+                <span>Mon - Sat: 10:00 AM - 10:00 PM</span>
               </div>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="w-4 h-4" />
-              <span>123 Medical Plaza, Mumbai, India</span>
+              <span><a href="https://maps.app.goo.gl/TcmbwQrTpnZi4qLz6">Near Bus Stop Akola | click here</a></span>
             </div>
           </div>
         </div>
