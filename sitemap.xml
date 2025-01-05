@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://waghadeskinclinics.in/</loc>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <!-- Skin Quiz Page -->
+  <url>
+    <loc>https://waghadeskinclinics.in/skinquiz</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Book Appointment Page -->
+  <url>
+    <loc>https://waghadeskinclinics.in/bookappointment</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://waghadeskinclinics.in/about</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://waghadeskinclinics.in/services</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Testimonials Page -->
+  <url>
+    <loc>https://waghadeskinclinics.in/testimonials</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Doctors Page -->
+  <url>
+    <loc>https://waghadeskinclinics.in/doctors</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://waghadeskinclinics.in/contact</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>
