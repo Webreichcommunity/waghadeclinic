@@ -13,7 +13,7 @@ const COLORS = {
 
 // Constants
 const STORAGE_KEY = 'medical_appointments';
-const ADMIN_WHATSAPP = '8668722207'; // Replace with actual admin number
+const ADMIN_WHATSAPP = '9920408870'; // Replace with actual admin number
 
 const formatWhatsAppMessage = (data) => {
   const formattedDate = new Date(data.date).toLocaleDateString('en-US', {

@@ -353,7 +353,7 @@ const SkinQuiz = () => {
                                         transition={{ delay: 0.4 }}
                                     >
                                         <a
-                                            href="/contact"
+                                            href="/bookappointment"
                                             className="block w-full bg-blue-600 text-white text-center py-4 rounded-xl hover:bg-blue-700 transition-colors font-semibold"
                                         >
                                             Book Your Professional Consultation Now
