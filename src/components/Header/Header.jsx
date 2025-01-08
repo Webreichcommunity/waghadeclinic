@@ -59,36 +59,36 @@ export default function Header() {
 
   const scrollWithOffset = (el) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = -80; 
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+    const yOffset = -80;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
   };
 
   return (
     <>
       {/* Top Info Bar */}
-      <div className="hidden lg:block bg-[#2E5077] text-white py-2">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4" />
-                <span>+91 9054628440</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Clock className="w-4 h-4" />
-                <span>Mon - Sat: 10:00 AM - 10:00 PM</span>
-              </div>
-            </div>
-            <div className="flex items-center space-x-2">
-              <MapPin className="w-4 h-4" />
-              <span><a href="https://maps.app.goo.gl/TcmbwQrTpnZi4qLz6">Near Bus Stop Akola | click here</a></span>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Main Header */}
       <div className={`w-full bg-white transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
+        <div className="hidden lg:block bg-[#2E5077] text-white py-2">
+          <div className="container mx-auto px-4">
+            <div className="flex justify-between items-center text-sm">
+              <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-2">
+                  <Phone className="w-4 h-4" />
+                  <span>+91 9054628440</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Clock className="w-4 h-4" />
+                  <span>Mon - Sat: 11:00 AM - 9:00 PM</span>
+                </div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MapPin className="w-4 h-4" />
+                <span><a href="https://maps.app.goo.gl/TcmbwQrTpnZi4qLz6">Near Bus Stop Akola | click here</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="container mx-auto">
           <div className="flex items-center justify-between px-4 py-4">
             {/* Logo */}
@@ -157,16 +157,15 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
+
         <div
-          className={`fixed z-40 inset-0 bg-gray-800/50 backdrop-blur-sm transition-opacity lg:hidden ${
-            isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
+          className={`fixed z-40 inset-0 bg-gray-800/50 backdrop-blur-sm transition-opacity lg:hidden ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+            }`}
           onClick={toggleMenu}
         >
           <div
-            className={`fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-xl transition-transform duration-300 ease-in-out ${
-              isMenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
+            className={`fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-xl transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+              }`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between p-4 border-b">
@@ -200,9 +199,8 @@ export default function Header() {
                     </HashLink>
                     {item.submenu && (
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          activeSubmenu === item.name ? "rotate-180" : ""
-                        }`}
+                        className={`w-5 h-5 transition-transform duration-300 ${activeSubmenu === item.name ? "rotate-180" : ""
+                          }`}
                       />
                     )}
                   </div>

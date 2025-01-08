@@ -61,7 +61,7 @@ const DoctorPage = () => {
                 📍 Address: Akola, Maharashtra
               </p>
               <p className="text-lg text-gray-700 font-semibold mb-4">
-                📞 Phone: <span className="text-[#4DA1A9]">+91 123 456 7890</span>
+                📞 Phone: <span className="text-[#4DA1A9]">+91 9920408870</span>
               </p>
               <Link to="/bookappointment"
                 href="mailto:dr.praful@example.com"

@@ -77,8 +77,8 @@ const Footer = () => {
                         <h3 className="text-white text-xl font-bold mb-4">Contact</h3>
                         <ul className="text-gray-400 space-y-2">
                             <li>contact@prafulwghade.com</li>
-                            <li>+1 (555) 123-4567</li>
-                            <li>Near new, Bus Stop Akola</li>
+                            <li>+91 9054628440</li>
+                            <li><a href="https://maps.app.goo.gl/TcmbwQrTpnZi4qLz6">Near Bus Stop Akola | click here</a></li>
                             <li>Maharashtra, 444004</li>
                         </ul>
                     </motion.div>
